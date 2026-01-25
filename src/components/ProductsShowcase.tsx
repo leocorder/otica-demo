@@ -93,7 +93,7 @@ export const ProductsShowcase: React.FC = () => {
     <div className="py-24 bg-prisma-off-white">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-          <div className="max-w-2xl">
+          <div className="max-md:w-full max-md:text-center max-w-2xl">
             <h2 className="text-prisma-yellow font-bold uppercase tracking-widest text-sm mb-4">
               Nossa Vitrine
             </h2>
@@ -102,7 +102,7 @@ export const ProductsShowcase: React.FC = () => {
             </h2>
           </div>
 
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 justify-center md:justify-end max-md:w-full">
             {categories.map((cat) => (
               <button
                 key={cat}

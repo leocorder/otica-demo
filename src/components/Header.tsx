@@ -42,7 +42,7 @@ export const Header: React.FC = () => {
         </div>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -62,7 +62,7 @@ export const Header: React.FC = () => {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-white"
+          className="lg:hidden text-white"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <Menu className="h-7 w-7" />
@@ -71,7 +71,7 @@ export const Header: React.FC = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-prisma-blue-dark absolute top-full left-0 right-0 py-6 border-t border-prisma-blue shadow-2xl animate-fade-in-down">
+        <div className="lg:hidden bg-prisma-blue-dark absolute top-full left-0 right-0 py-6 border-t border-prisma-blue shadow-2xl animate-fade-in-down">
           <nav className="flex flex-col items-center gap-6">
             {navLinks.map((link) => (
               <a

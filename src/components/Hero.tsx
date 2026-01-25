@@ -3,7 +3,7 @@ import { CircleCheck, MoveRight } from "lucide-react";
 
 export const Hero: React.FC = () => {
   return (
-    <div className="relative h-screen min-h-[600px] flex items-center overflow-hidden">
+    <div className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
@@ -12,10 +12,10 @@ export const Hero: React.FC = () => {
           // backgroundImage: `url('https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=2080&auto=format&fit=crop')`,
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-prisma-blue/90 to-prisma-blue/40"></div>
+        <div className="absolute inset-0 bg-linear-to-r from-prisma-blue/90 to-prisma-blue/40"></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 relative z-10 py-25">
         <div className="max-w-2xl text-white">
           <span className="inline-block bg-prisma-yellow text-prisma-blue-dark px-4 py-1 rounded-full font-bold text-sm mb-6 uppercase tracking-widest animate-bounce">
             Qualidade & Precisão
