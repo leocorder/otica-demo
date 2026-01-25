@@ -159,7 +159,7 @@ export const ProductsShowcase: React.FC = () => {
 
         <div className="mt-16 text-center">
           <p className="text-prisma-gray-soft mb-8">
-            Trabalhamos com as melhores marcas do mercado mundial.
+            Trabalhamos com as melhores marcas nacionais e internacionais.
           </p>
           <div className="flex flex-wrap justify-center gap-12 opacity-30 grayscale hover:grayscale-0 transition-all duration-500">
             {brands.map((brand) => (

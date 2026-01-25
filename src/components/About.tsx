@@ -2,6 +2,13 @@ import React from "react";
 import Image from "next/image";
 import { Check } from "lucide-react";
 
+const googleImages = [
+  "https://www.google.com/maps/embed?pb=!4v1769376603172!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJRFBzXzMzZUE.!2m2!1d-22.72612933627737!2d-47.64738873319556!3f340!4f0!5f0.7820865974627469",
+  "https://www.google.com/maps/embed?pb=!4v1769376644410!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJQ0NucS1XT1E.!2m2!1d-22.72583387311252!2d-47.64694598533728!3f320!4f10!5f0.7820865974627469",
+  "https://www.google.com/maps/embed?pb=!4v1769376680593!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJRFBzNTNLRFE.!2m2!1d-22.72612933627737!2d-47.64738873319556!3f333.53300429275333!4f-3.892710036534851!5f0.7820865974627469",
+  "https://www.google.com/maps/embed?pb=!4v1769376741766!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJRFBzOTMwMFFF!2m2!1d-22.72612933627737!2d-47.64738873319556!3f200.48171512008153!4f-20.55122863182612!5f0.7820865974627469",
+];
+
 export const About: React.FC = () => {
   return (
     <div className="py-24 bg-prisma-blue-dark text-white overflow-hidden relative">
@@ -32,7 +39,7 @@ export const About: React.FC = () => {
               </p>
               <ul className="space-y-4 pt-4">
                 {[
-                  "Mais de 15 anos de mercado",
+                  "Desde 1982 no mercado",
                   "Equipe de optometristas altamente qualificados",
                   "Curadoria exclusiva de marcas nacionais e importadas",
                   "Garantia de adaptação para todas as lentes",
@@ -64,6 +71,25 @@ export const About: React.FC = () => {
               <p className="font-medium">Clientes Felizes</p>
             </div>
           </div>
+        </div>
+
+        <div className="mt-20 grid lg:grid-cols-2 gap-16 items-center">
+          {googleImages.map((src, i) => (
+            <div
+              key={i}
+              className="h-96 rounded-3xl overflow-hidden bg-gray-200 shadow-xl border-2 border-white"
+            >
+              <iframe
+                src={src}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          ))}
         </div>
       </div>
     </div>

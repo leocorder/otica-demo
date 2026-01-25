@@ -11,7 +11,7 @@ export const Contact: React.FC = () => {
               Fale com a Prisma
             </h2>
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-prisma-blue mb-8">
-              Agende uma visita ou peça um orçamento
+              Faça-nos uma visita ou solicite seu orçamento via WhatsApp
             </h2>
 
             <p className="text-prisma-gray-soft mb-12 text-lg">
