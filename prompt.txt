@@ -1,0 +1,34 @@
+Construa um site para uma ótica que vende óculos de grau e de sol. O site deve ser um market place: vendas de produtos e serviços estão fora do escopo. Deve ser um site puramente institucional, para apresentar o negócio, os tipos de produtos vendidos, os serviços oferecidos, e oferecer opções de contato e localização da loja. Deve ser uma vitrine para potenciais clientes.
+Além da venda de óculos de sol, a ótica customiza óculos de grau de acordo com receitas médicas, oferecendo diversos tipos de lentes e armações que podem ser customizadas do jeito que o cliente preferir.
+A ótica já possui um logo e uma identidade visual, e uma sugestão de paleta de cores para o site seria:
+
+1. Cor principal (brand / destaque):
+Amarelo Prisma
+HEX: #F2B705 ou #F5B400
+Uso: botões principais (CTA), destaques, barras, ícones, detalhes de chamada
+Sensação: energia, visibilidade, lembrança de marca
+Dica: use com moderação em áreas grandes para não cansar a leitura.
+
+2. Cor secundária (confiança / institucional)
+Azul escuro
+HEX: #0B3C5D ou #123B5A
+Uso: header, footer, títulos, menus
+Sensação: confiança, profissionalismo, saúde/ótica
+
+3. Cor neutra clara (base do layout)
+Branco
+HEX: #FFFFFF ou #F9F9F9
+Uso: fundo do site, áreas de conteúdo, cards
+Sensação: limpeza, organização, foco no produto
+
+4. Cor neutra escura (texto e contraste)
+Cinza escuro / Preto suave
+HEX: #2B2B2B ou #333333
+Uso: textos, ícones, linhas, rodapé
+Sensação: leitura confortável, sofisticação
+
+5. Cor de apoio (opcional)
+Amarelo claro
+HEX: #FFF1C1
+Uso: fundos de seções, hover suave, banners informativos
+Sensação: leveza, acolhimento
