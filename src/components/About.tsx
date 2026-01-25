@@ -77,7 +77,7 @@ export const About: React.FC = () => {
           {googleImages.map((src, i) => (
             <div
               key={i}
-              className="h-96 rounded-3xl overflow-hidden bg-gray-200 shadow-xl border-2 border-white"
+              className="h-96 rounded-3xl overflow-hidden bg-white/10 shadow-xl border-2 border-white"
             >
               <iframe
                 src={src}
