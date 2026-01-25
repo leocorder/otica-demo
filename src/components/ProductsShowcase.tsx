@@ -126,16 +126,22 @@ export const ProductsShowcase: React.FC = () => {
               className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 group"
             >
               <div className="relative h-72 overflow-hidden">
-                <img
+                <Image
                   src={product.img}
                   alt={product.name}
+                  fill={true}
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                 />
-                {product.categories.map((category) => (
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-prisma-blue">
-                    {category}
-                  </div>
-                ))}
+                <div className="absolute top-4 right-4 flex flex-row gap-4">
+                  {product.categories.map((category) => (
+                    <div
+                      key={category}
+                      className="bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-prisma-blue"
+                    >
+                      {category}
+                    </div>
+                  ))}
+                </div>
               </div>
               <div className="p-8">
                 <h3 className="text-2xl font-bold text-prisma-blue mb-2 group-hover:text-prisma-yellow transition-colors">

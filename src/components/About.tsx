@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { Check } from "lucide-react";
 
 export const About: React.FC = () => {
@@ -49,11 +50,12 @@ export const About: React.FC = () => {
 
           <div className="order-1 lg:order-2 relative">
             <div className="aspect-square rounded-3xl overflow-hidden border-8 border-prisma-blue shadow-2xl">
-              <img
+              <Image
                 src="/images/about.webp"
                 // src="https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=2074&auto=format&fit=crop"
                 alt="Equipe Ótica Prisma"
                 className="w-full h-full object-cover"
+                fill={true}
               />
             </div>
             {/* Stats */}
