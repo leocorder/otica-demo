@@ -73,12 +73,15 @@ const brands: BrandProps[] = [
   // { src: "/images/brands/chanel.svg", alt: "Chanel" },
   { src: "/images/brands/chilli-beans.png", alt: "Chilli Beans" },
   { src: "/images/brands/colcci.svg", alt: "Colcci" },
+  { src: "/images/brands/crizal.png", alt: "Crizal" },
   // { src: "/images/brands/gucci.svg", alt: "Gucci" },
+  { src: "/images/brands/hoya.svg", alt: "Hoya" },
   // { src: "/images/brands/michael-kors.png", alt: "Michael Kors" },
   { src: "/images/brands/oakley.png", alt: "Oakley" },
   // { src: "/images/brands/prada.png", alt: "Prada" },
   { src: "/images/brands/ray-ban.png", alt: "Ray-Ban" },
-  { src: "/images/brands/tom-ford.svg", alt: "Tom Ford" },
+  // { src: "/images/brands/tom-ford.svg", alt: "Tom Ford" },
+  { src: "/images/brands/varilux.png", alt: "Varilux" },
 ].sort((a, b) => {
   if (a.alt < b.alt) return -1;
   return 1;
@@ -165,7 +168,8 @@ export const ProductsShowcase: React.FC = () => {
           <p className="text-prisma-gray-soft mb-8">
             Trabalhamos com as melhores marcas nacionais e internacionais.
           </p>
-          <div className="flex flex-wrap justify-center gap-12 opacity-30 grayscale hover:grayscale-0 transition-all duration-500">
+          {/* add "hover:grayscale-0" to show logo colors on hover */}
+          <div className="flex flex-wrap justify-center gap-12 opacity-30 grayscale transition-all duration-500">
             {brands.map((brand) => (
               <div key={brand.alt} className="flex items-center w-25">
                 <Image
