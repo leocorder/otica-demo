@@ -70,8 +70,9 @@ interface BrandProps {
 const brands: BrandProps[] = [
   // { src: "/images/brands/armani.png", alt: "Giorgio Armani" },
   { src: "/images/brands/carmim.png", alt: "Carmim" },
-  { src: "/images/brands/chanel.svg", alt: "Chanel" },
+  // { src: "/images/brands/chanel.svg", alt: "Chanel" },
   { src: "/images/brands/chilli-beans.png", alt: "Chilli Beans" },
+  { src: "/images/brands/colcci.svg", alt: "Colcci" },
   // { src: "/images/brands/gucci.svg", alt: "Gucci" },
   // { src: "/images/brands/michael-kors.png", alt: "Michael Kors" },
   { src: "/images/brands/oakley.png", alt: "Oakley" },

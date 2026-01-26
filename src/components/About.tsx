@@ -26,7 +26,8 @@ const images = [
     thumb: "/images/about-360-1.jpg",
   },
   {
-    src: "https://www.google.com/maps/embed?pb=!4v1769376644410!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJQ0NucS1XT1E.!2m2!1d-22.72583387311252!2d-47.64694598533728!3f320!4f10!5f0.7820865974627469",
+    src: "https://www.google.com/maps/embed?pb=!4v1769441251088!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJRFBzNzJrNFFF!2m2!1d-22.72612933627737!2d-47.64738873319556!3f85.47855929814051!4f-12.16618882715808!5f0.7820865974627469",
+    // src: "https://www.google.com/maps/embed?pb=!4v1769376644410!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJQ0NucS1XT1E.!2m2!1d-22.72583387311252!2d-47.64694598533728!3f320!4f10!5f0.7820865974627469",
     alt: "Interior 360º",
     is360: true,
     thumb: "/images/about-360-2.jpg",
