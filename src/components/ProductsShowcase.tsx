@@ -68,17 +68,19 @@ interface BrandProps {
 }
 
 const brands: BrandProps[] = [
-  { src: "/images/brands/armani.png", alt: "Giorgio Armani" },
+  // { src: "/images/brands/armani.png", alt: "Giorgio Armani" },
+  { src: "/images/brands/carmim.png", alt: "Carmim" },
   { src: "/images/brands/chanel.svg", alt: "Chanel" },
-  { src: "/images/brands/gucci.svg", alt: "Gucci" },
-  { src: "/images/brands/michael-kors.png", alt: "Michael Kors" },
+  { src: "/images/brands/chilli-beans.png", alt: "Chilli Beans" },
+  // { src: "/images/brands/gucci.svg", alt: "Gucci" },
+  // { src: "/images/brands/michael-kors.png", alt: "Michael Kors" },
   { src: "/images/brands/oakley.png", alt: "Oakley" },
-  { src: "/images/brands/prada.png", alt: "Prada" },
+  // { src: "/images/brands/prada.png", alt: "Prada" },
   { src: "/images/brands/ray-ban.png", alt: "Ray-Ban" },
   { src: "/images/brands/tom-ford.svg", alt: "Tom Ford" },
 ].sort((a, b) => {
-  if (a.alt < b.alt) return 1;
-  return -1;
+  if (a.alt < b.alt) return -1;
+  return 1;
 });
 
 export const ProductsShowcase: React.FC = () => {
@@ -129,7 +131,8 @@ export const ProductsShowcase: React.FC = () => {
                 <Image
                   src={product.img}
                   alt={product.name}
-                  fill={true}
+                  width={1500}
+                  height={1500}
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute top-4 right-4 flex flex-row gap-4">
@@ -163,12 +166,14 @@ export const ProductsShowcase: React.FC = () => {
           </p>
           <div className="flex flex-wrap justify-center gap-12 opacity-30 grayscale hover:grayscale-0 transition-all duration-500">
             {brands.map((brand) => (
-              <div key={brand.alt} className="flex items-center">
+              <div key={brand.alt} className="flex items-center w-25">
                 <Image
                   src={brand.src}
                   alt={brand.alt}
-                  width={100}
-                  height={100}
+                  width="0"
+                  height="0"
+                  sizes="100vw"
+                  className="w-full h-auto"
                 />
               </div>
             ))}
