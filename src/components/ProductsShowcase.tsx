@@ -169,9 +169,12 @@ export const ProductsShowcase: React.FC = () => {
             Trabalhamos com as melhores marcas nacionais e internacionais.
           </p>
           {/* add "hover:grayscale-0" to show logo colors on hover */}
-          <div className="flex flex-wrap justify-center gap-12 opacity-30 grayscale transition-all duration-500">
+          <div className="flex flex-wrap justify-center gap-8 md:gap-12 opacity-30 grayscale transition-all duration-500">
             {brands.map((brand) => (
-              <div key={brand.alt} className="flex items-center w-25">
+              <div
+                key={brand.alt}
+                className="flex items-center w-25 aspect-square"
+              >
                 <Image
                   src={brand.src}
                   alt={brand.alt}

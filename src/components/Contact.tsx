@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Clock, MapPin, Phone } from "lucide-react";
 
+const whatsAppLink = (
+  number: number,
+  message: string | undefined = undefined,
+) =>
+  `https://wa.me/${number}${message ? `?text=${encodeURIComponent(message)}` : ""}`;
+
 export const Contact: React.FC = () => {
+  const [message, setMessage] = useState("");
+
   return (
     <div className="py-24 bg-white">
       <div className="container mx-auto px-6">
@@ -46,9 +54,9 @@ export const Contact: React.FC = () => {
                     Telefone / WhatsApp
                   </h4>
                   <p className="text-prisma-gray-soft">
-                    (19) 3422-3591
+                    <a href="tel:+551934223591">(19) 3422-3591</a>
                     <br />
-                    {/* (21) 3333-4444 */}
+                    <a href={whatsAppLink(5519991135041)}>(19) 99113-5041</a>
                   </p>
                 </div>
               </div>
@@ -71,7 +79,7 @@ export const Contact: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-prisma-off-white p-10 rounded-3xl shadow-sm border border-prisma-yellow-light">
+          {/* <div className="bg-prisma-off-white p-10 rounded-3xl shadow-sm border border-prisma-yellow-light">
             <h3 className="text-2xl font-bold text-prisma-blue mb-6">
               Mande uma mensagem
             </h3>
@@ -125,6 +133,31 @@ export const Contact: React.FC = () => {
                 Enviar Mensagem
               </button>
             </form>
+          </div> */}
+          <div className="flex flex-col gap-6 bg-prisma-off-white p-10 rounded-3xl shadow-sm border border-prisma-yellow-light">
+            <h3 className="text-2xl font-bold text-prisma-blue">
+              Mande uma mensagem
+            </h3>
+            <textarea
+              rows={4}
+              className="flex-1 px-4 py-3 max-h-[250px] rounded-xl border border-gray-200 focus:ring-2 focus:ring-prisma-yellow focus:outline-none"
+              placeholder="Conte-nos o que você precisa..."
+              value={message}
+              onChange={(e) => setMessage(e.currentTarget.value)}
+            />
+            <button
+              type="button"
+              className="bg-prisma-blue hover:bg-prisma-blue-dark text-white font-bold py-4 rounded-xl transition-all shadow-lg hover:shadow-prisma-blue/30 cursor-pointer"
+              onClick={() => {
+                window.open(
+                  whatsAppLink(5519991135041, message || undefined),
+                  "_blank",
+                );
+                // setMessage("");
+              }}
+            >
+              Enviar Mensagem
+            </button>
           </div>
         </div>
 
@@ -140,6 +173,24 @@ export const Contact: React.FC = () => {
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
+
+        {/* WhatsApp Button */}
+        {/* <div className="fixed bottom-0 right-0 m-8 z-99">
+          <a
+            href={whatsAppLink(5519991135041)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center w-14 h-14 p-3 md:w-16 md:h-16 md:p-4  bg-[#25D366] text-white rounded-full shadow-lg transition-transform hover:scale-110"
+          >
+            <Image
+              src="/images/whatsapp.svg"
+              alt="WhatsApp"
+              width="24"
+              height="24"
+              className="w-full"
+            />
+          </a>
+        </div> */}
       </div>
     </div>
   );
