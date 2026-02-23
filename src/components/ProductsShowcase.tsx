@@ -113,7 +113,7 @@ export const ProductsShowcase: React.FC = () => {
               <button
                 key={cat}
                 onClick={() => setActiveTab(cat)}
-                className={`px-6 py-2 rounded-full font-medium transition-all ${
+                className={`px-6 py-2 rounded-full font-medium transition-all cursor-pointer ${
                   activeTab === cat
                     ? "bg-prisma-blue text-white shadow-md"
                     : "bg-white text-prisma-blue hover:bg-prisma-yellow-light"

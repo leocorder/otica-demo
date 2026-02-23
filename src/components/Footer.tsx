@@ -7,18 +7,25 @@ interface SocialProps {
   url: string;
 }
 
-const socials: SocialProps[] = [
-  {
-    name: "Instagram",
-    Icon: Instagram,
-    url: "https://www.instagram.com/oticaprismapiracicaba",
-  },
-  {
-    name: "Facebook",
-    Icon: Facebook,
-    url: "https://www.facebook.com/oticaprismapiracicaba",
-  },
-];
+const socials = (): SocialProps[] => {
+  const arr = [];
+  console.log(process.env.NEXT_PUBLIC_INSTAGRAM);
+  if (process.env.NEXT_PUBLIC_INSTAGRAM) {
+    arr.push({
+      name: "Instagram",
+      Icon: Instagram,
+      url: `https://www.instagram.com/${process.env.NEXT_PUBLIC_INSTAGRAM}`,
+    });
+  }
+  if (process.env.NEXT_PUBLIC_FACEBOOK) {
+    arr.push({
+      name: "Facebook",
+      Icon: Facebook,
+      url: `https://www.facebook.com/${process.env.NEXT_PUBLIC_FACEBOOK}`,
+    });
+  }
+  return arr;
+};
 
 export const Footer: React.FC = () => {
   return (
@@ -30,8 +37,13 @@ export const Footer: React.FC = () => {
               <div className="w-10 h-10 bg-prisma-yellow rounded-full flex items-center justify-center">
                 <Eye className="h-6 w-6 text-prisma-blue-dark" />
               </div>
-              <span className="text-2xl font-bold font-serif">
-                ÓTICA<span className="text-prisma-yellow">PRISMA</span>
+              <span className="text-2xl font-bold font-serif uppercase">
+                {process.env.NEXT_PUBLIC_APP_NAME?.split(" ")[0]}
+                <span className="text-prisma-yellow">
+                  {process.env.NEXT_PUBLIC_APP_NAME?.split(" ")
+                    .slice(-1)
+                    .join(" ")}
+                </span>
               </span>
             </div>
             <p className="text-white/70 max-w-sm mb-8">
@@ -39,7 +51,7 @@ export const Footer: React.FC = () => {
               óculos de grau, solares e lentes de contato.
             </p>
             <div className="flex gap-4">
-              {socials.map(({ name, Icon, url }) => (
+              {socials().map(({ name, Icon, url }) => (
                 <a
                   key={name}
                   href={url}
@@ -113,14 +125,14 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* <div className="border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center gap-4 text-white/50 text-sm">
-          <p>© 2024 Ótica Prisma. Todos os direitos reservados.</p>
+          <p>{`© ${new Date().getFullYear()} ${process.env.NEXT_PUBLIC_APP_NAME}. Todos os direitos reservados.`}</p>
           <div className="flex gap-8">
             <a href="#" className="hover:text-white transition-colors">Política de Privacidade</a>
             <a href="#" className="hover:text-white transition-colors">Termos de Uso</a>
           </div>
         </div> */}
         <div className="border-t border-white/10 pt-10 text-center text-white/50 text-sm">
-          <p>{`© ${new Date().getFullYear()} Ótica Prisma. Todos os direitos reservados.`}</p>
+          <p>{`© ${new Date().getFullYear()} ${process.env.NEXT_PUBLIC_APP_NAME}. Todos os direitos reservados.`}</p>
         </div>
       </div>
     </footer>

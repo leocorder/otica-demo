@@ -35,9 +35,12 @@ export const Header: React.FC = () => {
           </div>
           <Link
             href="/"
-            className={`text-2xl font-bold font-serif ${isScrolled || !isScrolled ? "text-white" : "text-prisma-blue"}`}
+            className={`text-2xl font-bold font-serif uppercase ${isScrolled || !isScrolled ? "text-white" : "text-prisma-blue"}`}
           >
-            ÓTICA<span className="text-prisma-yellow">PRISMA</span>
+            {process.env.NEXT_PUBLIC_APP_NAME?.split(" ")[0]}
+            <span className="text-prisma-yellow">
+              {process.env.NEXT_PUBLIC_APP_NAME?.split(" ").slice(-1).join(" ")}
+            </span>
           </Link>
         </div>
 

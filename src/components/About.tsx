@@ -5,38 +5,50 @@ import { Check } from "lucide-react";
 
 const images = [
   {
-    src: "/images/about-1.jpg",
+    src: "https://images.unsplash.com/photo-1539036776273-021ec1d78bec?q=80&w=1000&auto=format&fit=crop",
+    // src: "/images/about-1.jpg",
     alt: "Fechada",
     is360: false,
   },
   {
-    src: "/images/about-2.jpg",
+    src: "https://images.unsplash.com/photo-1615468822882-4828d2602857?q=80&w=1000&auto=format&fit=crop",
+    // src: "/images/about-2.jpg",
     alt: "Interior",
     is360: false,
   },
   {
-    src: "/images/about-3.jpg",
+    src: "https://images.unsplash.com/photo-1443934732608-9de53a872e32?q=80&w=1000&auto=format&fit=crop",
+    // src: "/images/about-3.jpg",
     alt: "Vitrine",
     is360: false,
   },
   {
-    src: "https://www.google.com/maps/embed?pb=!4v1769376603172!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJRFBzXzMzZUE.!2m2!1d-22.72612933627737!2d-47.64738873319556!3f340!4f0!5f0.7820865974627469",
+    src: "https://www.google.com/maps/embed?pb=!4v1771867603897!6m8!1m7!1sneBU94V5SUoAtzKHG1w0fQ!2m2!1d48.85750152019202!2d2.351364599742318!3f78.894005!4f0!5f0.7820865974627469",
+    // src: "https://www.google.com/maps/embed?pb=!4v1769376603172!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJRFBzXzMzZUE.!2m2!1d-22.72612933627737!2d-47.64738873319556!3f340!4f0!5f0.7820865974627469",
     alt: "Fechada 360º",
     is360: true,
-    thumb: "/images/about-360-1.jpg",
+    thumb:
+      "https://images.unsplash.com/photo-1736167442640-1988e440297c?q=80&w=1000&auto=format&fit=crop",
+    // thumb: "/images/about-360-1.jpg",
   },
   {
-    src: "https://www.google.com/maps/embed?pb=!4v1769441251088!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJRFBzNzJrNFFF!2m2!1d-22.72612933627737!2d-47.64738873319556!3f85.47855929814051!4f-12.16618882715808!5f0.7820865974627469",
+    src: "https://www.google.com/maps/embed?pb=!4v1771867438546!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJQ0VvWmY5ZFE.!2m2!1d-22.70543767370188!2d-47.64047212417509!3f317.21763574152294!4f-22.225240628132298!5f0.7820865974627469",
+    // src: "https://www.google.com/maps/embed?pb=!4v1769441251088!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJRFBzNzJrNFFF!2m2!1d-22.72612933627737!2d-47.64738873319556!3f85.47855929814051!4f-12.16618882715808!5f0.7820865974627469",
     // src: "https://www.google.com/maps/embed?pb=!4v1769376644410!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJQ0NucS1XT1E.!2m2!1d-22.72583387311252!2d-47.64694598533728!3f320!4f10!5f0.7820865974627469",
     alt: "Interior 360º",
     is360: true,
-    thumb: "/images/about-360-2.jpg",
+    thumb:
+      "https://images.unsplash.com/photo-1481437156560-3205f6a55735?q=80&w=1000&auto=format&fit=crop",
+    // thumb: "/images/about-360-2.jpg",
   },
   {
-    src: "https://www.google.com/maps/embed?pb=!4v1769376741766!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJRFBzOTMwMFFF!2m2!1d-22.72612933627737!2d-47.64738873319556!3f200.48171512008153!4f-20.55122863182612!5f0.7820865974627469",
+    src: "https://www.google.com/maps/embed?pb=!4v1771867357874!6m8!1m7!1skOdUOEoN5TIZod1gsJZa7A!2m2!1d-22.73443545697654!2d-47.64802447636793!3f181.22616245203858!4f-3.9925195497845323!5f0.7820865974627469",
+    // src: "https://www.google.com/maps/embed?pb=!4v1769376741766!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJRFBzOTMwMFFF!2m2!1d-22.72612933627737!2d-47.64738873319556!3f200.48171512008153!4f-20.55122863182612!5f0.7820865974627469",
     alt: "Laboratório 360º",
     is360: true,
-    thumb: "/images/about-360-3.jpg",
+    thumb:
+      "https://images.unsplash.com/photo-1540200049848-d9813ea0e120?q=80&w=1000&auto=format&fit=crop",
+    // thumb: "/images/about-360-3.jpg",
   },
 ];
 
@@ -82,8 +94,10 @@ export const About: React.FC = () => {
             <div className="space-y-6 text-white/80 text-lg leading-relaxed">
               <p>
                 Fundada com o propósito de humanizar o atendimento óptico, a{" "}
-                <span className="text-white font-bold">Ótica Prisma</span> se
-                tornou referência em inovação e precisão. Não vendemos apenas
+                <span className="text-white font-bold">
+                  {process.env.NEXT_PUBLIC_APP_NAME}
+                </span>{" "}
+                se tornou referência em inovação e precisão. Não vendemos apenas
                 armações; entregamos qualidade de vida.
               </p>
               <p>
@@ -93,7 +107,7 @@ export const About: React.FC = () => {
               </p>
               <ul className="space-y-4 pt-4">
                 {[
-                  "Desde 1982 no mercado",
+                  "Há mais de 40 anos no mercado", // TODO change to "Desde 1982 no mercado"
                   "Equipe de optometristas altamente qualificados",
                   "Curadoria exclusiva de marcas nacionais e importadas",
                   "Garantia de adaptação para todas as lentes",

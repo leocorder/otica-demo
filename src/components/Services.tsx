@@ -33,9 +33,9 @@ export const Services: React.FC = () => {
             Expertise em Cuidados Visuais
           </h2>
           <p className="text-prisma-gray-soft text-lg">
-            Na Ótica Prisma, transformamos sua receita médica em uma solução
-            visual perfeita, unindo tecnologia de ponta com um design que
-            reflete sua personalidade.
+            Na {process.env.NEXT_PUBLIC_APP_NAME}, transformamos sua receita
+            médica em uma solução visual perfeita, unindo tecnologia de ponta
+            com um design que reflete sua personalidade.
           </p>
         </div>
 

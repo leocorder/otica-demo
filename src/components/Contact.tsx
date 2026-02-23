@@ -7,6 +7,17 @@ const whatsAppLink = (
 ) =>
   `https://wa.me/${number}${message ? `?text=${encodeURIComponent(message)}` : ""}`;
 
+const formatPhone = (number: number | string) => {
+  const digits = number.toString().replace(/\D/g, "");
+  const countryCode = digits.slice(0, 2);
+  const areaCode = digits.slice(2, 4);
+  const prefix = digits.slice(4, digits.length - 4);
+  const suffix = digits.slice(-4);
+  return `(${areaCode}) ${prefix}-${suffix}`;
+};
+console.log(formatPhone(process.env.NEXT_PUBLIC_PHONE_NUMBER ?? ""));
+console.log(formatPhone(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? ""));
+
 export const Contact: React.FC = () => {
   const [message, setMessage] = useState("");
 
@@ -16,7 +27,7 @@ export const Contact: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-16">
           <div>
             <h2 className="text-prisma-yellow font-bold uppercase tracking-widest text-sm mb-4">
-              Fale com a Prisma
+              {`Fale com a ${process.env.NEXT_PUBLIC_APP_SHORT_NAME}`}
             </h2>
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-prisma-blue mb-8">
               Faça-nos uma visita ou solicite seu orçamento via WhatsApp
@@ -38,9 +49,9 @@ export const Contact: React.FC = () => {
                     Localização
                   </h4>
                   <p className="text-prisma-gray-soft">
-                    Rua Moraes Barros, 956
+                    {process.env.NEXT_PUBLIC_ADDRES_1}
                     <br />
-                    Centro, Piracicaba - SP
+                    {process.env.NEXT_PUBLIC_ADDRES_2}
                   </p>
                 </div>
               </div>
@@ -54,9 +65,26 @@ export const Contact: React.FC = () => {
                     Telefone / WhatsApp
                   </h4>
                   <p className="text-prisma-gray-soft">
-                    <a href="tel:+551934223591">(19) 3422-3591</a>
+                    {/* TODO on hover color */}
+                    <a
+                      href={`tel:+${process.env.NEXT_PUBLIC_PHONE_NUMBER ?? ""}`}
+                    >
+                      {formatPhone(process.env.NEXT_PUBLIC_PHONE_NUMBER ?? "")}
+                    </a>
                     <br />
-                    <a href={whatsAppLink(5519991135041)}>(19) 99113-5041</a>
+                    {/* TODO on hover color */}
+                    <a
+                      href={whatsAppLink(
+                        parseInt(
+                          process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "0",
+                          10,
+                        ),
+                      )}
+                    >
+                      {formatPhone(
+                        process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "",
+                      )}
+                    </a>
                   </p>
                 </div>
               </div>
@@ -150,7 +178,13 @@ export const Contact: React.FC = () => {
               className="bg-prisma-blue hover:bg-prisma-blue-dark text-white font-bold py-4 rounded-xl transition-all shadow-lg hover:shadow-prisma-blue/30 cursor-pointer"
               onClick={() => {
                 window.open(
-                  whatsAppLink(5519991135041, message || undefined),
+                  whatsAppLink(
+                    parseInt(
+                      process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "0",
+                      10,
+                    ),
+                    message || undefined,
+                  ),
                   "_blank",
                 );
                 // setMessage("");
@@ -162,22 +196,24 @@ export const Contact: React.FC = () => {
         </div>
 
         {/* Map Placeholder */}
-        <div className="mt-20 h-96 rounded-3xl overflow-hidden bg-gray-200 shadow-inner flex items-center justify-center border-4 border-white">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.057153205761!2d-47.652255913110025!3d-22.726116978264713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1561bfb5bc09a2f%3A0x11c48fada48cba3b!2s%C3%93tica%20Prisma!5e0!3m2!1sen!2sbr!4v1769360738874!5m2!1sen!2sbr"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen={true}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
+        {process.env.NEXT_PUBLIC_MAP_SRC ? (
+          <div className="mt-20 h-96 rounded-3xl overflow-hidden bg-gray-200 shadow-inner flex items-center justify-center border-4 border-white">
+            <iframe
+              src={process.env.NEXT_PUBLIC_MAP_SRC}
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+        ) : null}
 
         {/* WhatsApp Button */}
         {/* <div className="fixed bottom-0 right-0 m-8 z-99">
           <a
-            href={whatsAppLink(5519991135041)}
+            href={whatsAppLink(WHATSAPP_NUMBER)}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center w-14 h-14 p-3 md:w-16 md:h-16 md:p-4  bg-[#25D366] text-white rounded-full shadow-lg transition-transform hover:scale-110"
